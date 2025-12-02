@@ -2,6 +2,9 @@ const rockBtn = document.querySelector('.rock-button');
 const paperBtn = document.querySelector('.paper-button');
 const scissorsBtn = document.querySelector('.scissors-button');
 
+const scorePlayer = document.querySelector('#player-score')
+const scoreComputer = document.querySelector('#computer-score')
+
 rockBtn.addEventListener('click', handleRockClick)
 paperBtn.addEventListener('click', handlePaperClick)
 scissorsBtn.addEventListener('click', handleScissorsClick)
@@ -34,68 +37,74 @@ function handleScissorsClick() {
 }
 
 let toolsContainer = [rockBtn, paperBtn, scissorsBtn]
-                      // 0          1          2
+                      // 0         1          2
 function handleIA() {
     let random = Math.floor(Math.random() * 3)
     console.log(random)
     if(random === 0 && player1 === 'scissors') {
-        const winner = document.createElement('div')
+        const winner = document.createElement('h2')
         winner.classList.add('winner')
         winner.innerHTML = 'Computer wins!'
         document.body.appendChild(winner)
         computerScore++
+        scoreComputer.innerHTML = computerScore
         setTimeout(() => {
             document.body.removeChild(winner)
         } , 2000)
 
     } else if(random === 0 && player1 === 'paper') {    
-        const winner = document.createElement('div')
+        const winner = document.createElement('h2')
         winner.classList.add('winner')
         winner.innerHTML = 'Player wins!'
         document.body.appendChild(winner)
         playerScore++
+        scorePlayer.innerHTML = playerScore
         setTimeout(() => {
             document.body.removeChild(winner)
         }, 2000)
 
     } else if(random === 1 && player1 === 'rock') {
-        const winner = document.createElement('div')
+        const winner = document.createElement('h2')
         winner.classList.add('winner')
         winner.innerHTML = 'Computer wins!'
         document.body.appendChild(winner)
         computerScore++
+        scoreComputer.innerHTML = computerScore
         setTimeout(() => {
             document.body.removeChild(winner)
         } , 2000)
     } else if(random === 1 && player1 === 'scissors') {
-        const winner = document.createElement('div')
+        const winner = document.createElement('h2')
         winner.classList.add('winner')
         winner.innerHTML = 'Player wins!'
         document.body.appendChild(winner)
         playerScore++
+        scorePlayer.innerHTML = playerScore
         setTimeout(() => {
             document.body.removeChild(winner)
         } , 2000)
     } else if(random === 2 && player1 === 'paper') {
-        const winner = document.createElement('div')
+        const winner = document.createElement('h2')
         winner.classList.add('winner')
         winner.innerHTML = 'Computer wins!'
         document.body.appendChild(winner)
         computerScore++
+        scoreComputer.innerHTML = computerScore
         setTimeout(() => {
             document.body.removeChild(winner)
         } , 2000)
     } else if(random === 2 && player1 === 'rock') {
-        const winner = document.createElement('div')
+        const winner = document.createElement('h2')
         winner.classList.add('winner')
         winner.innerHTML = 'Player wins!'
         document.body.appendChild(winner)
         playerScore++
+        scorePlayer.innerHTML = playerScore
         setTimeout(() => {
             document.body.removeChild(winner)
         } , 2000)
     } else {
-        const winner = document.createElement('div')
+        const winner = document.createElement('h2')
         winner.classList.add('winner')
         winner.innerHTML = 'Draw!'
         document.body.appendChild(winner)
